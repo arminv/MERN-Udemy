@@ -6,21 +6,24 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Users from './users/pages/Users';
+import Users from './user/pages/Users';
 import NewPlace from './places/pages/NewPlace';
+import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 const App = () => {
   return (
     <Router>
+      <MainNavigation />
       <Switch>
-        {/* NOTE: Switch stops the page from always hitting the redirect and stops as soon as a route is hit: */}
-        <Route path='/' exact>
-          <Users />
-        </Route>
-        <Route path='/places/new' exact>
-          <NewPlace />
-        </Route>
-        <Redirect to='/' />
+        <main>
+          <Route path='/' exact>
+            <Users />
+          </Route>
+          <Route path='/places/new' exact>
+            <NewPlace />
+          </Route>
+          <Redirect to='/' />
+        </main>
       </Switch>
     </Router>
   );
