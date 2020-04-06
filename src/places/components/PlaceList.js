@@ -6,6 +6,7 @@ import './PlaceList.css';
 
 const PlaceList = (props) => {
   if (props.items.length === 0) {
+    console.log('HIT!');
     return (
       <div className='place-list center'>
         <Card>
@@ -15,6 +16,7 @@ const PlaceList = (props) => {
       </div>
     );
   }
+
   return (
     <ul className='place-list'>
       {props.items.map((place) => (
