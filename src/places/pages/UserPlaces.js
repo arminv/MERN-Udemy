@@ -11,7 +11,7 @@ const DUMMY_PLACES = [
     imageUrl:
       'https://www.pancommunications.com/uploads/2018/11/447px-Empire_State_Building_from_the_Top_of_the_Rock.jpg',
     address: '20 W 34th St, New York, NY 10001',
-    coordinates: {
+    location: {
       lat: 40.7484405,
       lng: -73.9878584,
     },
@@ -24,7 +24,7 @@ const DUMMY_PLACES = [
     imageUrl:
       'https://images.skyscrapercenter.com/building/empire_viewtop_mg.jpg',
     address: '20 W 34th St, New York, NY 10001',
-    coordinates: {
+    location: {
       lat: 40.7484405,
       lng: -73.9878584,
     },
