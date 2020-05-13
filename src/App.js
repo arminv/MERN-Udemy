@@ -9,6 +9,7 @@ import {
 import Users from './user/pages/Users';
 import NewPlace from './places/pages/NewPlace';
 import UserPlaces from './places/pages/UserPlaces';
+import UpdatePlace from './places/pages/UpdatePlace';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 const App = () => {
@@ -25,6 +26,10 @@ const App = () => {
           </Route>
           <Route path='/places/new' exact>
             <NewPlace />
+          </Route>
+          {/* If this route was placed before /places/new, we would have a problem as new would be caught as a variable: */}
+          <Route path='/places/:placeId'>
+            <UpdatePlace />
           </Route>
           <Redirect to='/' />
         </Switch>

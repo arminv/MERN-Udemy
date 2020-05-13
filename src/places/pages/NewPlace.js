@@ -6,7 +6,7 @@ import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
 } from '../../shared/util/validators';
-import './NewPlace.css';
+import './PlaceForm.css';
 
 const fromReducer = (state, action) => {
   switch (action.type) {
@@ -34,15 +34,20 @@ const fromReducer = (state, action) => {
 
 const NewPlace = () => {
   const [formState, dispatch] = useReducer(fromReducer, {
-    title: {
-      value: '',
-      isValid: false,
+    inputs: {
+      title: {
+        value: '',
+        isValid: false,
+      },
+      description: {
+        value: '',
+        isValid: false,
+      },
+      address: {
+        value: '',
+        isValid: false,
+      },
     },
-    description: {
-      value: '',
-      isValid: false,
-    },
-    isValid: false,
   });
   // NOTE: if we don't use 'useCallback', we risk having and infinite loop because of the 'useEffect' in Input.js:
   const inputHandler = useCallback((id, value, isValid) => {

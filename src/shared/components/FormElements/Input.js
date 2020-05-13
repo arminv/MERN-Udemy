@@ -24,9 +24,9 @@ const inputReducer = (state, action) => {
 const Input = (props) => {
   // NOTE: useReducer is a better option (comapred to useState) when pieces of state are related or state is more complex:
   const [inputState, dispatch] = useReducer(inputReducer, {
-    value: '',
+    value: props.value || '',
     isTouched: false,
-    isValid: false,
+    isValid: props.valid || false,
   });
 
   const changeHandler = (event) => {
