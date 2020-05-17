@@ -24,9 +24,9 @@ const inputReducer = (state, action) => {
 const Input = (props) => {
   // NOTE: useReducer is a better option (comapred to useState) when pieces of state are related or state is more complex:
   const [inputState, dispatch] = useReducer(inputReducer, {
-    value: props.value || '',
+    value: props.initialValue || '',
     isTouched: false,
-    isValid: props.valid || false,
+    isValid: props.initialValid || false,
   });
 
   const changeHandler = (event) => {
@@ -42,6 +42,7 @@ const Input = (props) => {
 
   useEffect(() => {
     props.onInput(id, value, isValid);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, value, isValid, onInput]);
 
   const touchHandler = () => {
